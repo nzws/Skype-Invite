@@ -60,21 +60,22 @@
         </form>
         <div class="dn max-width" id="invite-buttons">
             <a class="btn btn-outline-primary btn-lg btn-block" href="" id="chat-url"></a>
+            <a class="btn btn-outline-primary btn-lg btn-block" href="" id="call-url"></a>
         </div>
     </div>
 </div>
 
 <div class="jumbotron footer">
+    <p class="lead small">
+        Share: <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fxn--u8j1a.xn--n8j.tk%2F" target="_blank" class="btn btn-outline-success" id="twitter-url"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    </p>
+    <hr class="my-4">
     <div class="dn" id="jumbotron-invite">
         <p>あなたも招待URLを作ってみませんか？</p>
         <p class="lead">
             <a class="btn btn-outline-success" href="?" role="button" target="_blank">作ってみる</a>
         </p>
-        <hr class="my-4">
     </div>
-    <p class="lead small">
-        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fxn--u8j1a.xn--n8j.tk%2F" target="_blank" class="btn btn-outline-success" id="twitter-url"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-    </p>
     <p class="lead small">
         Source code: <a href="https://github.com/yuzulabo/Skype-Invite" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> yuzulabo/Skype-Invite</a><br>
         Developed by <a href="https://grragaa.yuzu.tk/@yuzu" target="_blank">@yuzu@grragaa.yuzu.tk</a>
@@ -100,6 +101,8 @@
             $("#jumbotron-desc").html(get["id"] + " さんがあなたを招待しています！");
             $("#chat-url").html(get["id"] + " さんとチャットする");
             $("#chat-url").attr("href", "skype:" + get["id"] + "?chat");
+            $("#call-url").html(get["id"] + " さんに通話する");
+            $("#call-url").attr("href", "skype:" + get["id"] + "?call");
             $("#twitter-url").attr("href", "https://twitter.com/intent/tweet?url=https%3A%2F%2Fxn--u8j1a.xn--n8j.tk%2F%3Fid%3D" + encodeURIComponent(get["id"]));
         }
     });
