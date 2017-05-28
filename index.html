@@ -42,27 +42,28 @@
         .center {
             text-align: center;
         }
+        .display-3 {
+            font-size: 3rem;
+        }
     </style>
 </head>
 <body>
 <div class="jumbotron header">
-    <h1 class="display-3 header-s">Skypeの招待</h1>
+    <h2 class="display-3 header-s">Skypeの招待</h2>
     <p class="lead header-s" id="jumbotron-desc"></p>
 </div>
 
 <div class="container">
-    <div class="row max-width">
-        <form action="" method="get" id="form" class="dn">
-            <div class="form-group">
-                <label>SkypeID:</label>
-                <input type="text" name="id" id="id" class="form-control" required>
-            </div>
-            <button type="submit" class="btn btn-outline-success btn-block">URL生成</button>
-        </form>
-        <div class="dn max-width" id="invite-buttons">
-            <a class="btn btn-outline-primary btn-lg btn-block" href="" id="chat-url"></a>
-            <a class="btn btn-outline-primary btn-lg btn-block" href="" id="call-url"></a>
+    <form action="" method="get" id="form" class="dn">
+        <div class="form-group">
+            <label>SkypeID:</label>
+            <input type="text" name="id" id="id" class="form-control" required>
         </div>
+        <button type="submit" class="btn btn-outline-success btn-block">URL生成</button>
+    </form>
+    <div class="dn max-width" id="invite-buttons">
+        <a class="btn btn-outline-primary btn-lg btn-block" href="" id="chat-url"></a>
+        <a class="btn btn-outline-primary btn-lg btn-block" href="" id="call-url"></a>
     </div>
 </div>
 
@@ -72,7 +73,7 @@
     </p>
     <hr class="my-4">
     <div class="dn" id="jumbotron-invite">
-        <p>あなたも招待URLを作ってみませんか？</p>
+        <p>あなたも招待URLを作ってみませんか？SkypeIDを入力するだけ！</p>
         <p class="lead">
             <a class="btn btn-outline-success" href="?" role="button" target="_blank">作ってみる</a>
         </p>
@@ -100,9 +101,9 @@
             $("#jumbotron-invite").removeClass("dn");
             $("#invite-buttons").removeClass("dn");
             $("#jumbotron-desc").html(get["id"] + " さんがあなたを招待しています！");
-            $("#chat-url").html(get["id"] + " さんとチャットする");
+            $("#chat-url").html(get["id"] + " さんとチャット");
             $("#chat-url").attr("href", "skype:" + get["id"] + "?chat");
-            $("#call-url").html(get["id"] + " さんに通話する");
+            $("#call-url").html(get["id"] + " さんに通話");
             $("#call-url").attr("href", "skype:" + get["id"] + "?call");
             $("#twitter-url").attr("href", "https://twitter.com/intent/tweet?url=https%3A%2F%2Fxn--u8j1a.xn--n8j.tk%2F%3Fid%3D" + encodeURIComponent(get["id"]));
         }
